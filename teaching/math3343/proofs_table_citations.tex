@@ -1,0 +1,56 @@
+ \documentclass{article}
+ % in preamble
+ \usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+ 
+ \title{Proofs, Tables, and Citations}
+ \date{\today} 
+ \author{A Person}
+ 
+ \begin{document}
+ 
+ \maketitle 
+ 
+  \begin{abstract}
+ A paper with a proof and a table and a citation.
+ \end{abstract}
+ 
+\section{First}
+
+\begin{table}
+\centering
+\begin{tabular}{||c||c}
+Symbol & Value \\
+\hline \hline
+$\pi$ & 3.14159... \\
+\hline
+$\mathrm{e}$ & 2.71828... \\
+\hline
+\end{tabular}
+\caption{Some important values}
+\label{tab:values}
+\end{table}
+Look at Table \ref{tab:values}.
+
+
+% in document
+ \begin{lemma}[Gr\"onwall]
+ Suppose $y’(t) \leq p(t) y(t)$. Then
+ $y(t) \leq y(0) \exp(\int_0^t p(\tau) \mathrm{d} \tau).$
+ \label{lem:gron}
+ \end{lemma}
+ \begin{proof}[Proof of Lemma \ref{lem:gron}]
+ We take note that $$y(t) - p(t) y(t) \leq 0$$ and
+ multiplying both sides by $\exp(-\int_0^t p(\tau)
+ \mathrm{d} \tau)$ ...
+ \end{proof}
+
+The textbook by Robert Adams \cite{adamsbook} is a great calculus resource!
+
+\bibliographystyle{plain}
+
+\bibliography{bibfile}
+
+
+ \end{document}
